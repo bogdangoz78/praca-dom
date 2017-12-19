@@ -12,8 +12,8 @@ Funkcje wykonują za nas większość pracy. dzięki nim nie musimy pisać  dzie
 
 ## Funkcja printf()
 
-funkcja wyjścia, jest zdefiniowana w bibliotece stdio.h i służy do wypisywania danych.Jest ona jedną z bardziej skomplikowanych funkcji 
-i jednocześnie jedną z najczęściej używanych funkcji w języku C.
+funkcja wyjścia, służy do wypisywania danych i jest zdefiniowana w bibliotece stdio.h.Jest to jedna z najczęściej używanych funkcji, a 
+zarazem jedna z bardziej skomplikowanych funkcji w języku C.
  najprostsze wykorzystanie tej funkcji.
  
      #include <stdio.h>
@@ -29,7 +29,7 @@ Po skompilowaniu i uruchomieniu komputer wyświetli na ekranie:
  zawierać:
 − zwykłe znaki (które są po prostu kopiowane na ekran)
     
-    Witaj swiecje
+    lubie to co robie
 − znaki specyjalne:
     
     '\a' - alarm (sygnał akustyczny terminala)
@@ -61,12 +61,12 @@ Po skompilowaniu i uruchomieniu komputer wyświetli na ekranie:
  
 przykładowo:
     
-    int i = 23;
+    int i = 28;
     printf("Liczbami naturalnymi są\n na przykład %i oraz %i.\n", 1, i);
  Na ekranie wyświetlony zostanie:
  
      Liczbami naturalnymi są 
-     na przykład 1 oraz 23.
+     na przykład 1 oraz 28.
 Najczęstsze użycie printf():
     
     printf("%i", i); gdy i jest typu int; zamiast %i można użyć %d
@@ -76,8 +76,8 @@ Najczęstsze użycie printf():
 Na liście argumentów możemy mieszać ze sobą zmienne różnych typów, liczby, napisy itp. w dowolnej liczbie.Nalezy jednak pamietać żeby nie pomylić typów lub kolejności.
 >Przy włączeniu ostrzeżeń (opcja -Wall lub -Wformat w GCC) kompilator powinien nas ostrzec, gdy format nie odpowiada podanym elementom.
     
-    int i = 5;
-    printf("%i %s %i", 5, 4, "napis"); /* powinno być: "%i %i %s" */
+    int i = 7;
+    printf("%i %s %i", 7, 4, "napis"); /* powinno być: "%i %i %s" */
 Istniej możliwość wyświetlenia danych przechowywanych w pamięci(buforze)
     
     printf(buf);
@@ -110,21 +110,22 @@ Kody formatujące podobne, jak dla printf():
     l    -    przedrostek stosowany przed:  d  u  x  o  (long int)
     l    -    przedrostek stosowany przed:  f  e  (double)
     L    -    przedrostek stosowany przed:  f  e  (long double)
+ 
  Przykładowe uzycie funkcji scanf() i printf():
     
     #include<stdio.h>                             
     int main()                                        
     {
-    char imie[20];
-    printf("Podaj swoje imie \n");     
-    scanf("%s", &imie);                       
-    printf("Witaj %s!", imie);               
+    char ulubione zwierze[20];
+    printf("Podaj swoje ulubione zwierze \n");     
+    scanf("%s", &ulubione zwierze);                       
+    printf("Czesc %s!", ulubione zwierze);               
     return 0;
     } 
 Program wypisze
 
-    Podaj swoje imie
-Po wpisaniu np. Marek i zatwierdzenia enterem komputer przypisze Marek do zmiennej imie i wyoisze na ekranie:
-
-    Witaj Marek!
+    Podaj swoje ulubione zwierze
+Po wpisaniu np. Azor i zatwierdzenia enterem komputer przypisze Azordo zmiennej ulubione zwierze i wypisze na ekranie:
+ 
+    czesc Azor!
 
